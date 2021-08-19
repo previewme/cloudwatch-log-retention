@@ -1,33 +1,19 @@
-# typescript-lambda
+# cloudwatch-log-retention
 
-[![CI Workflow](https://github.com/previewme/lambda-typescript/actions/workflows/ci.yml/badge.svg)](https://github.com/previewme/lambda-typescript/actions/workflows/ci.yml)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=previewme_lambda-typescript&metric=coverage)](https://sonarcloud.io/dashboard?id=previewme_lambda-typescript)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=previewme_lambda-typescript&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=previewme_lambda-typescript)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=previewme_lambda-typescript&metric=alert_status)](https://sonarcloud.io/dashboard?id=previewme_lambda-typescript)
+[![CI Workflow](https://github.com/previewme/cloudwatch-log-retention/actions/workflows/ci.yml/badge.svg)](https://github.com/previewme/cloudwatch-log-retention/actions/workflows/ci.yml)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=previewme_cloudwatch-log-retention&metric=coverage)](https://sonarcloud.io/dashboard?id=previewme_cloudwatch-log-retention)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=previewme_cloudwatch-log-retention&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=previewme_cloudwatch-log-retention)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=previewme_cloudwatch-log-retention&metric=alert_status)](https://sonarcloud.io/dashboard?id=previewme_cloudwatch-log-retention)
 
-This is a template repository for creating typescript lambda projects.
+Lambda function which automatically sets the retention period for all newly created Cloudwatch Log groups. When the retention period is modified or deleted, the function will reinstate the correct retention period.
 
-After cloning this template, the following steps need to be carried out:
+## Configuration
 
-1. Add the project to sonarcloud.
-2. The following files need to be modified to suit your project.
-3. Update the sonarcloud badges
+### Environment variables
 
-### package.json
-
-* name
-* version
-* repository  
-* description
-* license
-
-### sonar-project.properties
-
-* sonar.projectKey
-* sonar.links.homepage
-* sonar.links.ci
-* sonar.links.scm
-* sonar.links.issue
+| Environment Variable | Description | Required |
+| --- | --- | --- |
+| RETENTION_PERIOD_IN_DAYS | The retention period to set on Cloudwatch Log groups in days | Yes |
 
 ## Build
 
