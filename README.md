@@ -11,9 +11,9 @@ Lambda function which automatically sets the retention period for all newly crea
 
 ### Environment variables
 
-| Environment Variable | Description | Required |
+| Environment Variable | Description | Required | Default |
 | --- | --- | --- |
-| RETENTION_PERIOD_IN_DAYS | The retention period to set on Cloudwatch Log groups in days | Yes |
+| RETENTION_PERIOD_IN_DAYS | The retention period to set on Cloudwatch Log groups in days | No | 90 |
 
 ## Build
 
