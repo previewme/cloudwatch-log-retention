@@ -9,7 +9,7 @@ interface CloudwatchLogDetail {
     awsRegion: string;
     requestParameters: {
         logGroupName: string;
-        retentionPeriod?: number;
+        retentionInDays?: number;
     };
 }
 
@@ -24,7 +24,7 @@ export async function handler(event: EventBridgeEvent<string, CloudwatchLogDetai
     const client = new CloudWatchLogs({ region: region });
 
     const defaultRetentionPeriod = getDefaultRetentionPeriod();
-    const currentRetentionPeriod = event.detail.requestParameters.retentionPeriod;
+    const currentRetentionPeriod = event.detail.requestParameters.retentionInDays;
     if (currentRetentionPeriod !== defaultRetentionPeriod) {
         await client.putRetentionPolicy({ logGroupName: logGroupName, retentionInDays: defaultRetentionPeriod }).promise();
     }

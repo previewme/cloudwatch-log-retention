@@ -38,7 +38,7 @@
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0",
     "requestParameters": {
       "logGroupName": "bhavik-test-log",
-      "retentionPeriod": 1
+      "retentionInDays": 1
     },
     "responseElements": null,
     "requestID": "c653d2de-e469-4400-b6ec-292cec081c14",

@@ -26,7 +26,7 @@ describe('Cloudwatch Logs have retention policy set correctly', () => {
         jest.resetModules();
         process.env = { ...OLD_ENV };
         process.env.RETENTION_PERIOD_IN_DAYS = '30';
-        putRetentionPolicy.detail.requestParameters.retentionPeriod = 1;
+        putRetentionPolicy.detail.requestParameters.retentionInDays = 1;
     });
 
     afterAll(() => {
@@ -71,7 +71,7 @@ describe('Cloudwatch Logs have retention policy set correctly', () => {
     });
 
     test('Does not set retention period when it already matches', async () => {
-        putRetentionPolicy.detail.requestParameters.retentionPeriod = 30;
+        putRetentionPolicy.detail.requestParameters.retentionInDays = 30;
         await expect(handler(putRetentionPolicy));
         expect(mockPutRetentionPolicy).not.toHaveBeenCalled();
     });
